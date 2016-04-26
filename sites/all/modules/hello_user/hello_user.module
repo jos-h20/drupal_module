@@ -1,0 +1,18 @@
+<?php
+function hello_user_menu() {
+  $items = array();
+  $items['you_made_it'] = array(
+    'title' => 'Awesome New User!',
+    'page callback' => 'success_callback',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function success_callback() {
+  return '<p>Welcome, awesome new user!  You have made the right choice!</p>';
+}
+function hello_user_user_insert() {
+    $_GET['destination'] = 'you_made_it';
+}
